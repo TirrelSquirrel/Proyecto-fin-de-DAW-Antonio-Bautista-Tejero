@@ -1,0 +1,91 @@
+body {
+  background-color: #ffe2fe;
+}
+/* Add a black background color to the top navigation */
+header {
+  background-color: #ae70d8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  max-height: 50px;
+  border-radius: 40px;
+}
+
+.gymbook {
+  color: white;
+  padding-left: 15px;
+}
+ul {    
+  list-style: none;
+  display: inline-flex;
+}
+/* Style the links inside the navigation bar */
+header a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 17px;    
+  border-radius: 10px;
+}
+
+/* Change the color of links on hover */
+header a:hover {
+  background-color: #241623;    
+  opacity: 0.8;
+}
+
+/* Add a color to the active/current link */
+header a.active {
+  background-color: #241623;
+  color: white;
+}
+.logout_item {
+  background-color: #241623;
+}
+.publi_field {
+  margin: auto;
+  width: auto;
+  max-width: 500px;
+  display: flex;
+  border: #241623 dashed 3px;
+  margin-top: 5px;
+  border-radius: 20px;
+  font-size: 1.1em;  
+}
+
+.eliminarPubli {
+  max-width: fit-content;
+  max-height: fit-content;
+  font-weight: bolder;
+  color: red;
+}
+
+.publicacion {
+  margin: auto;
+  width: auto;
+  border: #241623 dashed 2px;
+  background-color: #ae70d8;
+  color: white;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+}
+.perfil_icon {
+  padding-top: 5px;
+  padding-right: 5px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+}
+.like_div{
+  align-self: flex-end;
+  
+}
+.like_div button {
+  padding: 5px;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymBook</title>
+    <link rel="stylesheet" href="css/main.css">    
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/secciones.css">
+</head> 
+<body>
+    <header>
+        <h3 class="gymbook">GymBook</h3>
+        <nav>
+            <ul>
+                <li><a id="inicio_boton">Inicio</a></li>
+                <li><a id="perfil_boton">Perfil</a></li>
+                <li><a id="mensajes_boton">Mensajes</a></li>
+                <li><a id="admin_boton" style="display: none;">Administrar</a></li>                
+                <li><a id="login_boton">Login</a></li>
+                <li><a id="desconectar_boton" style="display: none;">Desconectar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- formulario de login -->
+    <div class="popup" id="formulario_login">
+        <form id="login_form">
+            <legend>Login</legend>
+            <input type="text" id="user_login" placeholder="Nombre de usuario">
+            <input type="password" id="pass_login" placeholder="Contraseña">
+            <div class="btn_login">
+                <button type="submit" id="btn_login_id">Enviar</button>
+                <button type="button" id="no_registro_boton">No estoy registrado</button>
+                <button type="reset" class="cancelar" id="cancelar_login">Cancelar</button>
+            </div>
+        </form>
+        </div>
+    <!-- formulario de registro -->
+    <div class="popup" id="formulario_registro">
+        <form id="registro_form">
+            <legend>Registro</legend>
+            <input type="text" name="usuario" placeholder="Nombre de usuario" id="user_registro">
+            <input type="password" placeholder="Contraseña" id="pass_registro">
+            <input type="password" placeholder="Repite tu contraseña" id="contrasena_confirmar">
+            <div class="btn_login">
+                <button type="submit">Enviar</button>
+                <button type="reset" class="cancelar" id="cancelar_registro">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- CONTENIDOS-->
+    <main id="container">
+        <!--MURO PUBLICACIONES-->
+        <div id="publicaciones_muro" style="display: none;">
+            <button id="publi_boton" class="publi_boton">Nueva publicacion</button>
+            <fieldset id="publi_field" class="publi_field" style="display: none;">
+                <form id="publicacion_form">
+                    <label>He levantado</label>
+                    <input type="number" id="nueva_peso" placeholder="Peso(Kg)">
+                    <label>haciendo</label>
+                    <input type="number" id="nueva_repe" placeholder="nº repeticiones">
+                    <label>en</label>
+                    <select id="lista_ejercicios"></select>
+                    <button type="submit">Publicar</button>
+                    <button type="reset" class="cancelar" id="cancelar_publi">Cancelar</button>
+                </form>
+            </fieldset>
+            <!--LISTADO PUBLICACIONES-->
+            <div id="listado_publicaciones"></div>
+        </div>
+        <!--PERFIL-->
+        <div id="perfil" class="perfil_div" style="display: none;">
+            <img id="perfil_foto" class="perfil_icon_grande" src="http://localhost/gymbook/img/default.png" alt="Foto de perfil">
+            <h2 id="nombre_perfil" class="titulo_seccion"></h2>
+            <button id="editar_perfil">Editar datos</button>
+            <fieldset class="edicion_datos" id="edicion_datos" style="display: none;">
+                <form id="formulario_editar">                    
+                    <input type="text" id="cambio_usuario" placeholder="Nombre de usuario">
+                    <input type="password" id="cambio_pass" placeholder="Contraseña nueva">
+                    <input type="password" id="confirmar_pass" placeholder="Introduce tu contraseña actual">
+                    <button type="submit">Enviar</button>
+                    <button type="reset" class="cancelar" id="cancelar_editar">Cancelar</button>
+                </form>
+            </fieldset>
+            <div id="lista_publi_perfil">
+            </div>
+        </div>
+        <!--MENSAJES-->
+        <div id="mensajes" class="mensajes_div" style="display: none;">
+            <h1 id="bandeja" class="titulo_seccion">Mensajes recibidos</h1>
+            <div>
+                <button type="button" id="nuevo_mensaje_boton">Redactar mensaje</button>
+                <fieldset class="nuevo_mensaje" id="mensaje_field" style="display: none;">
+                    <form id="mensaje_form">
+                        <label class="destino_label">Enviar a</label>
+                        <select id="destinatario_mensaje">
+
+                        </select>
+                        <input type="text" id="asunto_mensaje" placeholder="Asunto">
+                        <textarea id="mensaje_contenido" maxlength="1000" rows="5" cols="50"></textarea>
+                        <button type="submit">Enviar</button>
+                        <button type="reset" class="cancelar" id="cancelar_mensaje">Cancelar</button>
+                    </form>
+                </fieldset>
+            </div>
+            <div class="botones_bandeja">
+                <button type="button" id="recibidos_boton">Recibidos</button>
+                <button type="button" id="enviados_boton">Enviados</button>
+            </div>
+            <div>
+                <div id="recibidos_div"></div>
+                <div id="enviados_div"></div>
+            </div>
+        </div>
+        <!--PANEL DE ADMINISTRADOR-->
+        <div id="administracion" style="display: none;">
+            <h1 class="titulo_seccion">Administracion</h1>
+            <form class="lista_usuarios" id="lista_usuarios">                
+            </form>
+        </div>
+    </main> 
+<script src="js/main.js"></script>
+</body>
+</html>
